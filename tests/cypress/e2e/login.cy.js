@@ -20,7 +20,7 @@ describe('Login', () => {
   it('should not log in with incorrect password', () => {
     const user = {
       instagram: '@vinipiu',
-      password: '1345!'
+      password: '134544!'
     }
 
     loginPage.go()
