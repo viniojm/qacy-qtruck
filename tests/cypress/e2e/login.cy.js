@@ -6,10 +6,10 @@ describe('Login', () => {
   it('must log in successfully', () => {
     const user = {
       name: 'Vinicius',
-      instagram: '@vinipiu',
+      instagram: '@vini',
       password: 'Aaaaaa1!'
     }
-
+    cy.apiCreateUser(user)
     loginPage.go()
     loginPage.form(user)
     loginPage.submit()
@@ -19,7 +19,7 @@ describe('Login', () => {
 
   it('should not log in with incorrect password', () => {
     const user = {
-      instagram: '@vinipiu',
+      instagram: '@vini',
       password: '134544!'
     }
 
