@@ -1,4 +1,4 @@
-
+import createPage from '../support/pages/Create'
 import mapPage from '../support/pages/Map'
 
 describe('Recommendation', () => {
@@ -15,14 +15,17 @@ describe('Recommendation', () => {
             latitude: '-23.62703872582536',
             longitude: '-46.566002368927',
             name: 'FoodTruck Marechal',
-            description: 'O melhor lugar para tomar suco de limão.',
-            opening_hours: 'das 14h as 20h'
+            details: 'O melhor lugar para tomar suco de limão.',
+            opening_hours: 'das 14h as 20h',
+            open_on_weekends: false
         }
 
         cy.apiCreateUser(user)
         cy.uiLogin(user)
 
         mapPage.createLink()
-        cy.setGeolocation(foodtruck.latitude, foodtruck.longitude)
+        createPage.form(foodtruck)
+        createPage.submit()
+        createPage.modal.haveText('Food truck cadastrado com sucesso!')
     })
 })
