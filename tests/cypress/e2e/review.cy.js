@@ -1,7 +1,8 @@
+import mapPage from '../support/pages/Map'
 
-describe ('Reviews', ()=> {
+describe('Reviews', () => {
 
-    it('must send a new review', ()=>{
+    it('must send a new review', () => {
 
         const user = {
             name: 'Math Daniels',
@@ -18,9 +19,19 @@ describe ('Reviews', ()=> {
             open_on_weekends: true
         }
 
+        const review = {
+            comment: 'O Hot Dog estava bom, porém com pouco purê.',
+            stars: 4
+        }
+
         cy.apiCreateUser(user)
         cy.apiLogin(user)
         cy.apiCreateFoodTruck(foodtruck)
         cy.uiLogin(user)
+        mapPage.goToFoodtruck(foodtruck.name)
+
+        cy.get('textarea[name=comment]').type(review.comment)
+        cy.get(`input[name=stars][value="${review.stars}"]`).click({ force: true })
+        cy.contains('button', 'Enviar avaliação').click() 
     })
 })
