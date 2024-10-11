@@ -1,14 +1,12 @@
 import loginPage from '../support/pages/Login'
 import mapPage from '../support/pages/Map'
+import users from '../fixtures/login-users.json'
 
 
 describe('Login', () => {
   it('must log in successfully', () => {
-    const user = {
-      name: 'Vinicius',
-      instagram: '@vini',
-      password: 'Aaaaaa1!'
-    }
+    const user = users.success
+
     cy.apiCreateUser(user)
     loginPage.go()
     loginPage.form(user)
@@ -18,10 +16,7 @@ describe('Login', () => {
   })
 
   it('should not log in with incorrect password', () => {
-    const user = {
-      instagram: '@vini',
-      password: '134544!'
-    }
+    const user = users.inv_pass
 
     loginPage.go()
     loginPage.form(user)
@@ -31,10 +26,7 @@ describe('Login', () => {
   })
 
   it('should not log in with a non-existent instagram ', () => {
-    const user = {
-      instagram: '@vtest',
-      password: 'Aaaaaa1!'
-    }
+    const user = users.not_found
 
     loginPage.go()
     loginPage.form(user)
@@ -43,10 +35,7 @@ describe('Login', () => {
   })
 
   it('instagram must be mandatory', () => {
-    const user = {
-      instagram: '',
-      password: 'pwd123'
-    }
+    const user = users.require_insta
 
     loginPage.go()
     loginPage.form(user)
@@ -55,10 +44,7 @@ describe('Login', () => {
   })
 
   it('password must be mandatory', () => {
-    const user = {
-      instagram: '@test',
-      password: ''
-    }
+    const user = users.require_pass
 
     loginPage.go()
     loginPage.form(user)

@@ -1,0 +1,19 @@
+{
+    "user": {
+        "name": "Math Daniels",
+        "instagram": "@math",
+        "password": "Aaaaaa1!"
+    },
+    "foodtruck": {
+        "latitude": "-23.632061492457712",
+        "longitude": "-46.71051979064942",
+        "name": "Hot Dog do Claudio",
+        "details": "Hot dog duplo com bastante purê.",
+        "opening_hours": "das 14h as 20h",
+        "open_on_weekends": true
+    },
+    "review": {
+        "comment": "O Hot Dog estava bom, porém com pouco purê.",
+        "stars": 4
+    }
+}

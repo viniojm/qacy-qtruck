@@ -1,0 +1,23 @@
+{
+    "success": {
+      "name": "Vinicius",
+      "instagram": "@vini",
+      "password": "Aaaaaa1!"
+    },
+    "inv_pass": {
+      "instagram": "@vini",
+      "password": "1345!"
+    },
+    "not_found": {
+      "instagram": "@vtest",
+      "password": "Aaaaaa1!"
+    },
+    "require_insta": {
+      "instagram": "",
+      "password": "Aaaaaa1!"
+    },
+    "require_pass": {
+      "instagram": "@vini",
+      "password": ""
+    }
+}
