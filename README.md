@@ -17,7 +17,6 @@
 Open the terminal in the `backend` and `frontend` folder and run `npm install`
 
 Open the the `tests` folder and run `npm install`
-Install Cypress `npm install cypress --save-dev`
 
 ## Execution
 To execute, use the Cypress command in the root of the tests folder:
